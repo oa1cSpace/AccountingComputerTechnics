@@ -1,3 +1,5 @@
+<%@page import="CRUD.EditValues"%>
+<%@page import="common.TechnicsBean"%>
 <%@ page import="CRUD.InsertValues" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -5,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>TECHNICS</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<%
@@ -20,15 +22,22 @@
 		String repair = request.getParameter("repair");
 		String description = request.getParameter("description");
 		
-		// testin input data
-		//out.println(name);
-		//out.println(components);
-		//out.println(supplier);
+		TechnicsBean objTechBean = new TechnicsBean();
 		
+		objTechBean.setName(name);
+		objTechBean.setComponents(components);
+		objTechBean.setSupplier(supplier);
+		objTechBean.setData_of_purchase(data_of_purchase);
+		objTechBean.setMoving(moving);
+		objTechBean.setExisting(existing);
+		objTechBean.setEmployee(employee);
+		objTechBean.setState(state);
+		objTechBean.setRepair(repair);
+		objTechBean.setDescription(description);
 		
-		InsertValues objInsert = new InsertValues();
-		objInsert.insertValues(name, components, supplier, data_of_purchase, moving,
-				existing, employee, state, repair, description);
+		EditValues objEditValues = new EditValues();
+		objEditValues.editTechnic(objTechBean);
+		
 	%>
 	
 	// to stay on the same page after INSERT

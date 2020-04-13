@@ -16,8 +16,6 @@ String id = (String)request.getParameter("id");
 EditValues edit = new EditValues();
 
 TechnicsBean techBean = edit.getValuesOfTechnic(id);
-
-
 %>
 
 
@@ -25,7 +23,7 @@ TechnicsBean techBean = edit.getValuesOfTechnic(id);
  
 <h1>Edit values</h1>
 	
-		<form action="controller/insertController.jsp">
+		<form action="controller/editController.jsp">
 		
 		<div  >
 			
@@ -42,7 +40,7 @@ TechnicsBean techBean = edit.getValuesOfTechnic(id);
 			<p>Repair:<input type="text" name=repair value=<%=techBean.getRepair()%>><br></p>
 			<p>Description:<input type="text" name=description value=<%=techBean.getDescription()%>><br></p>
 			
-			<input type="submit" value="Insert">
+			<input type="submit" value="Edit">
 		
 		</div>
 					

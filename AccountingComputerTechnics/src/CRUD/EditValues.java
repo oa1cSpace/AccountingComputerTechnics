@@ -49,7 +49,7 @@ public class EditValues {
 		return techBean;
 	}
 
-public void editTechnic(TechnicsBean objTechBean) {
+public void editTechnic(TechnicsBean techBean) {
 		
 		//instance of DBConnection
 		DBConnection objDBConnection = new DBConnection();
@@ -61,21 +61,22 @@ public void editTechnic(TechnicsBean objTechBean) {
 		
 		try {
 			String query = "UPDATE technics "
-						+ "SET name=?,components=?,supplier=?,data_of_purchase=?,moving=?,existing=?,employee=?,state=?,repair=?,description=? WHERE id=?";
+						+ "SET name=?,components=?,supplier=?,data_of_purchase=?,moving=?,existing=?,employee=?,state=?,repair=?,description=? "
+						+ "WHERE id=?";
 			
 			ps=connection.prepareStatement(query);
 			
-			ps.setString(1, objTechBean.getName());
-			ps.setString(2, objTechBean.getComponents());
-			ps.setString(3, objTechBean.getSupplier());
-			ps.setString(4, objTechBean.getData_of_purchase());
-			ps.setString(5, objTechBean.getMoving());
-			ps.setString(6, objTechBean.getExisting());
-			ps.setString(7, objTechBean.getEmployee());
-			ps.setString(8, objTechBean.getState());
-			ps.setString(9, objTechBean.getRepair());
-			ps.setString(10, objTechBean.getDescription());
-			ps.setString(11, objTechBean.getId());
+			ps.setString(1, techBean.getName());
+			ps.setString(2, techBean.getComponents());
+			ps.setString(3, techBean.getSupplier());
+			ps.setString(4, techBean.getData_of_purchase());
+			ps.setString(5, techBean.getMoving());
+			ps.setString(6, techBean.getExisting());
+			ps.setString(7, techBean.getEmployee());
+			ps.setString(8, techBean.getState());
+			ps.setString(9, techBean.getRepair());
+			ps.setString(10, techBean.getDescription());
+			ps.setString(11, techBean.getId());
 			
 			ps.executeUpdate();
 			

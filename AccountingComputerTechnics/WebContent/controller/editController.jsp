@@ -11,6 +11,7 @@
 </head>
 <body>
 	<%
+		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		String components = request.getParameter("components");
 		String supplier = request.getParameter("supplier");
@@ -24,6 +25,7 @@
 		
 		TechnicsBean objTechBean = new TechnicsBean();
 		
+		objTechBean.setId(id);
 		objTechBean.setName(name);
 		objTechBean.setComponents(components);
 		objTechBean.setSupplier(supplier);
